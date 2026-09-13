@@ -24,7 +24,7 @@ import { PageActions } from '../../PageActions/PageActions';
 import { useID } from '../../hooks/useID';
 import { useFrameworkTranslations } from '../../useFrameworkTranslations';
 import { capitalizeFirstLetter } from '../../utils/strings';
-import { PageFormGroup } from './PageFormGroup';
+import { PageFormGroup, PageFormHelperTextVariant } from './PageFormGroup';
 import { useRequiredValidationRule } from './validation-hooks';
 
 /**
@@ -98,7 +98,8 @@ type PageFormTextInputBaseProps<
    */
   button?: ReactNode;
 
-  helperText?: string;
+  helperText?: ReactNode;
+  helperTextVariant?: PageFormHelperTextVariant;
 
   /**
    * When present, it specifies that the <input> element should be disabled.
@@ -250,6 +251,7 @@ export function PageFormTextInput<
     placeholder,
     button,
     helperText,
+    helperTextVariant,
     isDisabled,
     isReadOnly,
     isRequired,
@@ -351,6 +353,7 @@ export function PageFormTextInput<
             labelHelp={labelHelp}
             additionalControls={additionalControls}
             helperText={helperText}
+            helperTextVariant={helperTextVariant}
             helperTextInvalid={helperTextInvalid}
             isRequired={isRequired}
             fullWidth={fullWidth}
